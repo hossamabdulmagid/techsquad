@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  background-color: #282c34;
+  min-height: 20vh;
+  color: white;
 }
 
 .App-header {
@@ -14,10 +17,20 @@
 }
 
 .edit {
-  font-size: 11px;
-  display: flex;
-  padding: 7px;
-  alignitems: center;
+  padding: 2px;
+
   justifycontent: center;
-  textalign: center;
+}
+
+.align {
+  text-align: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+strong {
+  text-align: center;
+}
+.rapp {
+  padding: 20px;
 }

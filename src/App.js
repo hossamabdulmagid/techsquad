@@ -7,21 +7,50 @@ import RotateCharts from './component/rotatecharts/rotatecharts.component'
 const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <Layout />
-        <RadarCharts />
-        <div className="container">
-          <div className="row">
-            <div className="col-6">
-              <Demo />
-            </div>
-            <div className="col-6">
-              <RotateCharts />
-            </div>
-          </div>
-        </div>
-      </header>
+      <div className="container">
 
+
+        <div className="container">
+
+          <div className="col-xs-4"></div>
+          <div className="col-xs-4">
+
+            <Layout />
+
+          </div>
+          <div className="col-xs-4"></div>
+
+
+        </div>
+
+        <div className="container">
+          <div xs={2} md={4} > </div>
+
+
+          <div xs={6} md={4} >
+
+            <RadarCharts />
+
+          </div>
+
+          <div xs={4} md={4}></div>
+
+        </div>
+
+        <div className="container">
+
+          <div xs={4} md={4} >
+            <Demo />
+          </div>
+          <div xs={4} md={4} className="rapp"></div>
+
+          <div xs={4} md={4} >
+            <RotateCharts />
+          </div>
+
+
+        </div>
+      </div>
     </div>
   );
 }

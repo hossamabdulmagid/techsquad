@@ -88,40 +88,39 @@ class Demo extends React.PureComponent {
         const { classes } = this.props;
 
         return (
-            <Paper>
-                <Chart
-                    data={chartData}
-                    className={classes.chart}
-                >
-                    <ArgumentAxis tickFormat={format} />
-                    <ValueAxis
-                        max={50}
-                        labelComponent={ValueLabel}
-                    />
+            <div className="container">
+                <Paper>
+                    <Chart data={chartData} className={classes.chart}>
+                        <ArgumentAxis tickFormat={format} />
+                        <ValueAxis
+                            max={50}
+                            labelComponent={ValueLabel}
+                        />
 
-                    <LineSeries
-                        name="TV news"
-                        valueField="tvNews"
-                        argumentField="year"
-                    />
-                    <LineSeries
-                        name="Church"
-                        valueField="church"
-                        argumentField="year"
-                    />
-                    <LineSeries
-                        name="Military"
-                        valueField="military"
-                        argumentField="year"
-                    />
-                    <Legend position="bottom" rootComponent={Root} itemComponent={Item} labelComponent={Label} />
-                    <Title
-                        text={`Vistors over Time ${'\n'}`}
-                        textComponent={TitleText}
-                    />
-                    <Animation />
-                </Chart>
-            </Paper>
+                        <LineSeries
+                            name="TV news"
+                            valueField="tvNews"
+                            argumentField="year"
+                        />
+                        <LineSeries
+                            name="Church"
+                            valueField="church"
+                            argumentField="year"
+                        />
+                        <LineSeries
+                            name="Military"
+                            valueField="military"
+                            argumentField="year"
+                        />
+                        <Legend position="none" rootComponent={Root} itemComponent={Item} labelComponent={Label} />
+                        <h4>
+                            Vistors over Time
+                                </h4>
+                        <Animation />
+                    </Chart>
+                </Paper>
+            </div>
+
         );
     }
 }

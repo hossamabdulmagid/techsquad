@@ -30,22 +30,30 @@ class RotateCharts extends React.PureComponent {
         const { data: chartData } = this.state;
 
         return (
-            <Paper>
-                <Chart
-                    data={chartData}
-                    rotated
-                >
-                    <ArgumentAxis />
-                    <ValueAxis max={7} />
+            <div className="container">
+                <div>
+                    <Paper>
+                        <Chart
+                            data={chartData}
+                            rotated
+                        >
+                            <ArgumentAxis />
+                            <ValueAxis max={7} />
 
-                    <BarSeries
-                        valueField="DivisionRemainder"
-                        argumentField="Varaint"
-                    />
-                    <Title text="Sales by ads Varaint" />
-                    <Animation />
-                </Chart>
-            </Paper>
+                            <BarSeries
+                                valueField="DivisionRemainder"
+                                argumentField="Varaint"
+                            />
+                            <h4>
+                                Sales by ads Varaint
+                                </h4>
+                            <Animation />
+                        </Chart>
+                    </Paper>
+
+
+                </div>
+            </div>
         );
     }
 }

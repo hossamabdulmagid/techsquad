@@ -42,14 +42,24 @@ class RadarCharts extends React.Component {
         };
 
         return (
-            <div>
+            <div className='container'>
+                <div className="row">
+                    <div className="col-md-4" xs={4}>
 
-                <RadarChart
-                    captions={captions}
-                    data={data}
-                    size={450}
-                />
+                    </div>
 
+                    <div className="col-md-4" xs={4}>
+                        <RadarChart
+                            captions={captions}
+                            data={data}
+                            size={170}
+                        />
+                    </div>
+                    <div className="col-md-4" xs={1}>
+
+                    </div>
+
+                </div>
             </div>
         );
     }
