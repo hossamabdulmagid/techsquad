@@ -2,7 +2,7 @@ import React from 'react';
 
 import RadarChart from 'react-svg-radar-chart';
 import 'react-svg-radar-chart/build/css/index.css'
-
+import { Container, Col, Row } from 'react-bootstrap'
 class RadarCharts extends React.Component {
     render() {
         const data = [
@@ -42,25 +42,20 @@ class RadarCharts extends React.Component {
         };
 
         return (
-            <div className='container'>
-                <div className="row">
-                    <div className="col-md-4" xs={4}>
 
-                    </div>
+            <Container>
+                <Row className="row">
+                    <Col xs={4} md={4}></Col>
+                    <Col xs={4} md={4}><RadarChart
+                        className="initial"
+                        captions={captions}
+                        data={data}
+                        size={200}
+                    /></Col>
+                    <Col xs={4} md={4}></Col>
 
-                    <div className="col-md-4" xs={4}>
-                        <RadarChart
-                            captions={captions}
-                            data={data}
-                            size={170}
-                        />
-                    </div>
-                    <div className="col-md-4" xs={1}>
-
-                    </div>
-
-                </div>
-            </div>
+                </Row>
+            </Container>
         );
     }
 }

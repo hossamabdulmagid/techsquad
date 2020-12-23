@@ -11,7 +11,7 @@ import {
 } from '@devexpress/dx-react-chart-material-ui';
 import { withStyles } from '@material-ui/core/styles';
 import { Animation } from '@devexpress/dx-react-chart';
-
+import { Container, Row, Col } from 'react-bootstrap'
 import { confidence as data } from './data.barcharts';
 
 const format = () => tick => tick;
@@ -88,7 +88,8 @@ class Demo extends React.PureComponent {
         const { classes } = this.props;
 
         return (
-            <div className="container">
+            <Container>
+
                 <Paper>
                     <Chart data={chartData} className={classes.chart}>
                         <ArgumentAxis tickFormat={format} />
@@ -119,7 +120,7 @@ class Demo extends React.PureComponent {
                         <Animation />
                     </Chart>
                 </Paper>
-            </div>
+            </Container>
 
         );
     }

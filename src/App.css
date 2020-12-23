@@ -34,3 +34,10 @@ strong {
 .rapp {
   padding: 20px;
 }
+.initial {
+  display: initial;
+}
+
+.UserName {
+  display: contents;
+}
