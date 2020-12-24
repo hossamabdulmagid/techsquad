@@ -42,6 +42,10 @@ const Option = (props) => {
         console.log(data, 'asdas');
 
     }
+
+    /*
+    const [array,setArray] = useState([{name:"x",},{name:"y",}])
+    */
     return (
         <>
             <Container>
@@ -55,6 +59,16 @@ const Option = (props) => {
                             options={colourOptions}
                             onChange={handleChange}
                         />
+                        {/*
+                        
+                        <select> 
+                        {array.map((singlePlayer,x)=>(
+                            <option key={x}>
+                            {SinnglePlayer}
+                            </option>
+                        ))}
+                        </select>
+                        */}
                     </Col>
                     <Col xs={6} md={6}>
                         <Select
