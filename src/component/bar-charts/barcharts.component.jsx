@@ -90,7 +90,7 @@ class Demo extends React.PureComponent {
         return (
             <Container>
 
-                <Paper>
+                <Paper className="style">
                     <Chart data={chartData} className={classes.chart}>
                         <ArgumentAxis tickFormat={format} />
                         <ValueAxis

@@ -9,7 +9,7 @@ import {
 } from '@devexpress/dx-react-chart-material-ui';
 
 import { Animation } from '@devexpress/dx-react-chart';
-
+import { Container } from 'react-bootstrap'
 const data = [
     { Varaint: 'varaint a', DivisionRemainder: 0 },
     { Varaint: 'varaint b', DivisionRemainder: 25 },
@@ -30,30 +30,26 @@ class RotateCharts extends React.PureComponent {
         const { data: chartData } = this.state;
 
         return (
-            <div className="container">
-                <div>
-                    <Paper>
-                        <Chart
-                            data={chartData}
-                            rotated
-                        >
-                            <ArgumentAxis />
-                            <ValueAxis max={7} />
+            <Container>
+                <Paper className="style">
+                    <Chart
+                        data={chartData}
+                        rotated
+                    >
+                        <ArgumentAxis />
+                        <ValueAxis max={7} />
 
-                            <BarSeries
-                                valueField="DivisionRemainder"
-                                argumentField="Varaint"
-                            />
-                            <h4>
-                                Sales by ads Varaint
+                        <BarSeries
+                            valueField="DivisionRemainder"
+                            argumentField="Varaint"
+                        />
+                        <h4>
+                            Sales by ads Varaint
                                 </h4>
-                            <Animation />
-                        </Chart>
-                    </Paper>
-
-
-                </div>
-            </div>
+                        <Animation />
+                    </Chart>
+                </Paper>
+            </Container>
         );
     }
 }

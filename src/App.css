@@ -1,25 +1,13 @@
 .App {
   text-align: center;
   background-color: #282c34;
-  min-height: 20vh;
-  color: white;
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  align-items: center;
 }
 
 .edit {
   padding: 2px;
-
-  justifycontent: center;
 }
 
 .align {
@@ -28,16 +16,65 @@
   margin: 0 auto;
 }
 
-strong {
-  text-align: center;
-}
-.rapp {
-  padding: 20px;
+.style {
+  margin: 10px;
 }
 .initial {
   display: initial;
+  padding: 20px;
+}
+
+.User {
+  border-radius: 18px;
+  border: 1px solid darkgray;
+  padding: 2px 2px 0px 2px;
+  font-size: 8px;
+  color: white;
 }
 
 .UserName {
-  display: contents;
+  color: white;
+  border-radius: 10px;
+  padding: 0px 0px 2px 2px;
+}
+.styled {
+  margin-top: 50px;
+}
+.roundblue {
+  width: 0px;
+  height: 0px;
+  padding: 2px;
+  margin: 0px;
+  margin-right: 2px;
+  border-radius: 10px;
+  display: inline-flex;
+  margin-top: 8px;
+  margin-right: 5px;
+
+  background-color: rgb(79, 85, 242);
+}
+.roundgreen {
+  width: 0px;
+  height: 0px;
+  padding: 2px;
+  margin: 0px;
+  border-radius: 10px;
+  display: inline-flex;
+  margin-top: 8px;
+  margin-right: 5px;
+
+  background-color: rgb(69, 188, 75);
+}
+
+select {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+}
+.first {
+  background-color: black;
+  color: white;
+}
+.rapper{
+  background-color: black;
 }

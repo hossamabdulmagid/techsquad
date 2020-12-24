@@ -3,61 +3,81 @@ import React from 'react';
 import RadarChart from 'react-svg-radar-chart';
 import 'react-svg-radar-chart/build/css/index.css'
 import { Container, Col, Row } from 'react-bootstrap'
-class RadarCharts extends React.Component {
-    render() {
-        const data = [
-            {
-                data: {
-                    battery: 0.7,
-                    design: .8,
-                    useful: 0.9,
-                    speed: 0.67,
-                    weight: 0.8,
-                    bla: 0.1,
-                },
-                meta: { color: 'blue' }
+/*
+player X
+Key Dec Jan Feb Mar Apr
+Attacking 65 55 70 67 72
+Passing 55 45 66 70 80
+Technical 76 77 71 80 76
+Creativity 60 56 67 77 78
+Defencive 40 45 50 48 60
+    */
+
+/*
+player y
+Key Dec Jan Feb Mar Apr
+Attacking 80 85 89 88 90
+Passing 89 79 74 70 80
+Technical 90 81 71 80 76
+Creativity 60 56 67 77 78
+Defencive 66 76 50 67 70
+ 
+*/
+const RadarCharts = () => {
+
+    const data = [
+        {
+            data: {
+                
+                Attacking: 0.65,
+                Passing: 0.55,
+                Technical: 0.70,
+                Creativity: 0.67,
+                Defencive: 0.72,
+                bla: 0.1,
             },
-            {
-                data: {
-                    battery: 0.6,
-                    design: .85,
-                    useful: 0.5,
-                    speed: 0.6,
-                    weight: 0.7,
-                    bla: 0.4,
+            meta: { color: 'rgb(79, 85, 242)' }
+        },
+        {
+            data: {
+                Attacking: 0.80,
+                Passing: .89,
+                Technical: 0.90,
+                Creativity: 0.60,
+                Defencive: 0.66,
+                bla: 0.4,
 
-                },
-                meta: { color: 'red' }
-            }
-        ];
+            },
+            meta: { color: 'rgb(69, 188, 75)' }
+        }
+    ];
 
-        const captions = {
-            // columns
-            battery: 'VITESSE',
-            design: 'TIRS',
-            useful: 'PASSES',
-            speed: 'PHYSIQUE',
-            weight: 'DEFINSE',
-            bla: "DRIBBLES"
-        };
+    const captions = {
+        // columns
+        Attacking: 'VITESSE',
+        Passing: 'TIRS',
+        Technical: 'PASSES',
+        Creativity: 'PHYSIQUE',
+        Defencive: 'DEFINSE',
+        bla: "DRIBBLES"
+    };
+    console.log(data, `data`)
+    return (
+        <Container>
+            <Row>
+                <Col xs>
+                    <RadarChart
+                    className=""
+                    captions={captions}
+                    data={data}
+                    size={310}
+                /></Col>
 
-        return (
 
-            <Container>
-                <Row className="row">
-                    <Col xs={4} md={4}></Col>
-                    <Col xs={4} md={4}><RadarChart
-                        className="initial"
-                        captions={captions}
-                        data={data}
-                        size={200}
-                    /></Col>
-                    <Col xs={4} md={4}></Col>
-
-                </Row>
-            </Container>
-        );
-    }
+            </Row>
+        </Container>
+    );
 }
+
 
 export default RadarCharts;
