@@ -58,7 +58,6 @@ const Option = (props) => {
                     </Col>
                     <Col xs={6} md={6}>
                         <Select
-                            className='basic-single'
                             defaultValue={[stateOptions[12]]}
                             name="month"
                             styles={SecoundCustomStyles}

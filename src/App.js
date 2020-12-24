@@ -11,7 +11,7 @@ const App = () => {
     <div className="App">
       <Container>
         <Row>
-          <Col>
+          <Col xs>
             <Option />
           </Col>
         </Row>
