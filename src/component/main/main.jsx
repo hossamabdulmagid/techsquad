@@ -35,8 +35,14 @@ const Main = () => {
 
     const [selectedPlayers, setSelectedPlayers] = useState([]);
 
+    const [selectedPeriod, setSelectedPeriod] = useState('avg');
+
     const handleChange = (event) => {
-        setSelectedPlayers(event);
+        setSelectedPlayers(event || []);
+    }
+
+    const handleChangePeriod = (event) => {
+        setSelectedPeriod(event.value || []);
     }
     const [month, setMonth] = useState([{ name: 'January' }, { name: 'February' }, { name: 'March' }, { name: 'April' }, { name: 'December' }, { name: 'Avarage' }])
 
@@ -63,12 +69,28 @@ const Main = () => {
                                 name="months"
                                 styles={SecoundCustomStyles}
                                 options={stateOptions}
+                                onChange={handleChangePeriod}
+
+                                theme={(theme) => ({
+                                    ...theme,
+                                    borderRadius: 0,
+                                    colors: {
+                                        ...theme.colors,
+                                        text: 'orangered',
+                                        primary25: 'hotpink',
+                                        primary: 'white',
+                                        neutral70: 'white',
+                                        neutral80: 'white',
+                                        neutral90: 'white',
+                                    },
+                                })}
+
                             />
                         </RapperedSelect>
                     </Col>
                 </Row>
 
-                <Players playerOne={selectedPlayers[0]} playerTwo={selectedPlayers[1]} />
+                <Players players={selectedPlayers} period={selectedPeriod} />
 
             </Container>
         </Fragment>

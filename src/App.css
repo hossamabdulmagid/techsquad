@@ -90,3 +90,9 @@
 .name{
   display: contents;
 }
+.center-item {
+  margin:0 auto;
+}
+.ss{
+  background-color: black;
+}

@@ -1,7 +1,8 @@
 export const dataOptions = [
     {
         value: "x",
-        label: "X",
+        label: "Kylian mbappe",
+        image:"https://bit.ly/kent-c-dodds",
         Dec: {
 
             Attacking: 0.65,
@@ -49,13 +50,14 @@ export const dataOptions = [
             Defencive: 0.60,
             bla: 0.1,
         },
-
-        meta: { color: 'rgb(79, 85, 242)' }
+        meta: { color: 'rgb(69, 188, 75)' }
+      
     },
     {
         value: "y",
 
-        label: "Y",
+        label: "Antonine Griezmans",
+        image:"https://bit.ly/kent-c-dodds",
         Dec: {
 
             Attacking: 0.80,
@@ -63,7 +65,6 @@ export const dataOptions = [
             Technical: 0.90,
             Creativity: 0.60,
             Defencive: 0.60,
-            bla: 0.1,
         },
         Jan: {
 
@@ -72,7 +73,6 @@ export const dataOptions = [
             Technical: 0.81,
             Creativity: 0.56,
             Defencive: 0.76,
-            bla: 0.1,
         },
         Feb: {
 
@@ -81,7 +81,6 @@ export const dataOptions = [
             Technical: 0.71,
             Creativity: 0.67,
             Defencive: 0.50,
-            bla: 0.1,
         },
 
         Mar: {
@@ -91,7 +90,6 @@ export const dataOptions = [
             Technical: 0.80,
             Creativity: 0.77,
             Defencive: 0.67,
-            bla: 0.1,
         },
 
         Apr: {
@@ -101,7 +99,6 @@ export const dataOptions = [
             Technical: 0.76,
             Creativity: 0.78,
             Defencive: 0.70,
-            bla: 0.1,
         },
 
         meta: { color: 'rgb(79, 85, 242)' }
@@ -109,12 +106,12 @@ export const dataOptions = [
 ];
 
 export const stateOptions = [
-    { value: '1', label: 'January'},
-    { value: '2', label: 'February' },
-    { value: '3', label: 'March' },
-    { value: '4', label: 'April' },
-    { value: '12', label: 'December' },
-    { value: 'val', label: 'Avarage' },
+    { value: 'Jan', label: 'January'},
+    { value: 'Feb', label: 'February' },
+    { value: 'Mar', label: 'March' },
+    { value: 'Apr', label: 'April' },
+    { value: 'Dec', label: 'December' },
+    { value: 'avg', label: 'Avarage' },
 ];
 
 export const groupedOptions = [

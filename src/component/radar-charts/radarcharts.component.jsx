@@ -23,162 +23,71 @@ Creativity 60  56   67     77    78
 Defencive  66  76   50     67    70
  
 */
-const RadarCharts = () => {
 
-    const data = [
-        /*      {
-                 data: {
-                         name:"X",
-                         Dec: {
-         
-                             Attacking: 0.65,
-                             Passing: 0.55,
-                             Technical: 0.76,
-                             Creativity: 0.60,
-                             Defencive: 0.40,
-                             bla: 0.1,
-                         },
-                         Jan: {
-         
-                             Attacking: 0.55,
-                             Passing: 0.45,
-                             Technical: 0.77,
-                             Creativity: 0.56,
-                             Defencive: 0.45,
-                             bla: 0.1,
-                         },
-                         Feb: {
-         
-                             Attacking: 0.70,
-                             Passing: 0.66,
-                             Technical: 0.71,
-                             Creativity: 0.67,
-                             Defencive: 0.50,
-                             bla: 0.1,
-                         },
-         
-                         Mar: {
-         
-                             Attacking: 0.67,
-                             Passing: 0.70,
-                             Technical: 0.80,
-                             Creativity: 0.80,
-                             Defencive: 0.48,
-                             bla: 0.1,
-                         },
-         
-                         Apr: {
-         
-                             Attacking: 0.72,
-                             Passing: 0.80,
-                             Technical: 0.76,
-                             Creativity: 0.78,
-                             Defencive: 0.60,
-                             bla: 0.1,
-                         },
-         
-                     },
-                     meta: { color: 'rgb(79, 85, 242)' }
-                 }, 
-                 {
-                   data: {
-                  name: "Y",
-                  Dec: {
-  
-                      Attacking: 0.80,
-                      Passing: 0.89,
-                      Technical: 0.90,
-                      Creativity: 0.60,
-                      Defencive: 0.60,
-                      bla: 0.1,
-                  },
-                  Jan: {
-  
-                      Attacking: 0.85,
-                      Passing: 0.79,
-                      Technical: 0.81,
-                      Creativity: 0.56,
-                      Defencive: 0.76,
-                      bla: 0.1,
-                  },
-                  Feb: {
-  
-                      Attacking: 0.89,
-                      Passing: 0.74,
-                      Technical: 0.71,
-                      Creativity: 0.67,
-                      Defencive: 0.50,
-                      bla: 0.1,
-                  },
-  
-                  Mar: {
-  
-                      Attacking: 0.88,
-                      Passing: 0.70,
-                      Technical: 0.80,
-                      Creativity: 0.77,
-                      Defencive: 0.67,
-                      bla: 0.1,
-                  },
-  
-                  Apr: {
-  
-                      Attacking: 0.90,
-                      Passing: 0.80,
-                      Technical: 0.76,
-                      Creativity: 0.78,
-                      Defencive: 0.70,
-                      bla: 0.1,
-                  },
-  
-              },
-              meta: { color: 'rgb(79, 85, 242)' }
-          },*/
-        {
-            data: {
 
-                Attacking: 0.65,
-                Passing: 0.55,
-                Technical: 0.70,
-                Creativity: 0.67,
-                Defencive: 0.72,
-                bla: 0.91,
-            },
-            meta: { color: 'rgb(79, 85, 242)' }
-        },
-        {
-            data: {
-                Attacking: 0.80,
-                Passing: .19,
-                Technical: 0.90,
-                Creativity: 0.60,
-                Defencive: 0.66,
-                bla: 0.49,
-
-            },
-            meta: { color: 'rgb(69, 188, 75)' }
-        }
-    ];
+const RadarCharts = ({ players = [], period = 'avg' }) => {
 
     const captions = {
         // columns
-        Attacking: 'VITESSE',
-        Passing: 'TIRS',
-        Technical: 'PASSES',
-        Creativity: 'PHYSIQUE',
-        Defencive: 'DEFINSE',
-        bla: "DRIBBLES"
-    };
-    console.log(data, `>>>>>>>> data`)
+
+        Attacking: "Attacking",
+        Passing: "Passing",
+        Technical: "Technical",
+        Creativity: "Creativity",
+        Defencive: "Defencive"
+    }
+
+
+    const months = ["Dec", "Jan", "Feb", "Mar", "Apr"];
+    const data = players.map(player => {
+
+        if (period != 'avg') {
+            console.log("period", period);
+            player.data = player[period];
+        } else {
+            player.data = {
+                Attacking: 0,
+                Passing: 0,
+                Technical: 0,
+                Creativity: 0,
+                Defencive: 0
+            }
+            months.forEach(month => {
+                player.data.Attacking += player[month].Attacking / 5;
+                player.data.Passing += player[month].Passing / 5;
+                player.data.Technical += player[month].Technical / 5;
+                player.data.Creativity += player[month].Creativity / 5;
+                player.data.Defencive += player[month].Defencive / 5;
+
+            })
+
+        }
+
+        return player;
+    })
+    console.log("data", data);
     return (
-        <Container>
-            <Row>
-                <Col xs>
+        <Container >
+            <Row className="text-center">
+                <Col bsPrefix="d-block d-lg-none d-md-none">
+
                     <RadarChart
                         captions={captions}
                         data={data}
-                        size={290}
+                        size={390}
                     />
+                </Col>
+            </Row>
+            <Row className="text-center">
+                <Col bsPrefix="d-block d-sm-none d-xs-none d-md-block d-lg-block center-item" >
+                    <div>
+                        <RadarChart
+                            captions={captions}
+                            data={data}
+                            size={690}
+                        />
+                    </div>
+
                 </Col>
             </Row>
         </Container>
