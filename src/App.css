@@ -10,15 +10,6 @@
   padding: 2px;
 }
 
-.align {
-  text-align: center;
-  align-items: center;
-  margin: 0 auto;
-}
-
-.style {
-  margin: 10px;
-}
 .initial {
   display: initial;
   padding: 20px;
@@ -27,9 +18,8 @@
 .User {
   border-radius: 18px;
   border: 1px solid darkgray;
-  padding: 2px 3px 0px 3px;
   color: white;
-  font-size: 7px;
+  padding-top: 1px;
 }
 
 .UserName {
@@ -50,7 +40,8 @@
   border-radius: 10px;
   display: inline-flex;
   margin-top: 8px;
-  margin-right: 35px;
+  margin-left: 15px;
+  float: left;
 
   background-color: rgb(79, 85, 242);
 }
@@ -62,16 +53,12 @@
   border-radius: 10px;
   display: inline-flex;
   margin-top: 8px;
-  margin-right: 30px;
+  margin-left: 15px;
 
+  float: left;
   background-color: rgb(69, 188, 75);
 }
 
-select {
-  background-color: black;
-  color: white;
-  border-radius: 10px;
-}
 .first {
   background-color: black;
   color: white;
@@ -96,7 +83,10 @@ select {
 .font {
   font-size: 100%;
   font-weight: 900;
+  color: silver;
+
 }
-.asa{
-  color:blanchedalmond;
+
+.name{
+  display: contents;
 }

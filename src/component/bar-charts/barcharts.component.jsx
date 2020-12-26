@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Paper from '@material-ui/core/Paper';
 import {
     Chart,
@@ -11,7 +10,7 @@ import {
 } from '@devexpress/dx-react-chart-material-ui';
 import { withStyles } from '@material-ui/core/styles';
 import { Animation } from '@devexpress/dx-react-chart';
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import { confidence as data } from './data.barcharts';
 
 const format = () => tick => tick;
@@ -46,7 +45,7 @@ const legendItemBase = ({ classes, ...restProps }) => (
 const Root = withStyles(legendStyles, { name: 'LegendRoot' })(legendRootBase);
 const Label = withStyles(legendLabelStyles, { name: 'LegendLabel' })(legendLabelBase);
 const Item = withStyles(legendItemStyles, { name: 'LegendItem' })(legendItemBase);
-const demoStyles = () => ({
+const barstyledStyles = () => ({
     chart: {
         paddingRight: '20px',
     },
@@ -60,7 +59,7 @@ const ValueLabel = (props) => {
     return (
         <ValueAxis.Label
             {...props}
-            text={`${text}%`}
+            text={`${text}`}
         />
     );
 };
@@ -74,7 +73,7 @@ const TitleText = withStyles(titleStyles)(({ classes, ...props }) => (
     <Title.Text {...props} className={classes.title} />
 ));
 
-class Demo extends React.PureComponent {
+class BarCharts extends React.PureComponent {
     constructor(props) {
         super(props);
 
@@ -86,22 +85,14 @@ class Demo extends React.PureComponent {
     render() {
         const { data: chartData } = this.state;
         const { classes } = this.props;
-
         return (
             <Container>
-
                 <Paper className="style">
                     <Chart data={chartData} className={classes.chart}>
                         <ArgumentAxis tickFormat={format} />
                         <ValueAxis
                             max={50}
                             labelComponent={ValueLabel}
-                        />
-
-                        <LineSeries
-                            name="TV news"
-                            valueField="tvNews"
-                            argumentField="year"
                         />
                         <LineSeries
                             name="Church"
@@ -116,7 +107,7 @@ class Demo extends React.PureComponent {
                         <Legend position="none" rootComponent={Root} itemComponent={Item} labelComponent={Label} />
                         <h4>
                             Vistors over Time
-                                </h4>
+                        </h4>
                         <Animation />
                     </Chart>
                 </Paper>
@@ -126,4 +117,4 @@ class Demo extends React.PureComponent {
     }
 }
 
-export default withStyles(demoStyles, { name: 'Demo' })(Demo);
+export default withStyles(barstyledStyles, { name: 'BarCharts' })(BarCharts);

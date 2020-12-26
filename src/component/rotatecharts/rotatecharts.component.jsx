@@ -3,7 +3,6 @@ import Paper from '@material-ui/core/Paper';
 import {
     Chart,
     BarSeries,
-    Title,
     ArgumentAxis,
     ValueAxis,
 } from '@devexpress/dx-react-chart-material-ui';
@@ -20,7 +19,6 @@ const data = [
 class RotateCharts extends React.PureComponent {
     constructor(props) {
         super(props);
-
         this.state = {
             data,
         };
@@ -28,10 +26,9 @@ class RotateCharts extends React.PureComponent {
 
     render() {
         const { data: chartData } = this.state;
-
         return (
             <Container>
-                <Paper className="style">
+                <Paper>
                     <Chart
                         data={chartData}
                         rotated

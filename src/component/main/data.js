@@ -109,7 +109,7 @@ export const dataOptions = [
 ];
 
 export const stateOptions = [
-    { value: '1', label: 'January' },
+    { value: '1', label: 'January'},
     { value: '2', label: 'February' },
     { value: '3', label: 'March' },
     { value: '4', label: 'April' },

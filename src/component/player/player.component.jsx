@@ -1,32 +1,67 @@
 import React from 'react';
 import RadarCharts from '../radar-charts/radarcharts.component'
-import Demo from '../bar-charts/barcharts.component'
+import BarCharts from '../bar-charts/barcharts.component'
 import RotateCharts from '../rotatecharts/rotatecharts.component'
 import { Container, Row, Col } from 'react-bootstrap'
+import { Avatar } from "@chakra-ui/react"
+
 const Players = ({ playerOne, playerTwo }) => {
-
-
     if (playerOne && !playerTwo || !playerOne && playerTwo) {
-        return (<Container>
-            <Row>
-                <Col xs={12} md={6}>
-                    <div className="pleaseChoosePlayer">
-                        <Demo />
-                    </div>
-                </Col>
-                <Col xs={12} md={6}>
-                    <div className="pleaseChoosePlayer">
+        return (
+            <Container>
+                <Row>
+                    <Col xs={12} md={4} className="styled"> </Col>
+                    <Col xs={12} md={4} className="styled">
+                        <div className="User">
+                            <div className="roundblue">
+                            </div>
+                            <Avatar size="xs" name="Kent Dodds" src="https://bit.ly/kent-c-dodds" />
+                            <h3 className="name">
+                                Kylian mbappe
+                            </h3>
+                        </div>
+                    </Col>
+                    <Col xs={12} md={4} className="styled"></Col>
 
-                        <RotateCharts />
-                    </div>
-                </Col>
-            </Row>
-        </Container>)
+                    <Col xs={12} md={6}>
+                        <div className="pleaseChoosePlayer">
+                            <BarCharts />
+                        </div>
+                    </Col>
+                    <Col xs={12} md={6}>
+                        <div className="pleaseChoosePlayer">
+                            <RotateCharts />
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
+        )
     }
 
     else if (playerOne && playerTwo) {
         return (
             <Container>
+                <Row>
+                    <Col xs={12} md={4} className="styled">
+                        <div className="User">
+                            <div className="roundblue"></div>
+                            <Avatar size="xs" name="Kent Dodds" src="https://bit.ly/kent-c-dodds" />
+                            <h3 className="name">
+                                Kylian mbappe
+                            </h3>
+                        </div>
+                    </Col>
+                    <Col xs={12} md={4} className="styled"><small>vs</small></Col>
+                    <Col xs={12} md={4} className="styled">
+                        <div className="User">
+                            <div className="roundgreen"></div>
+                            <Avatar size="xs" name="Kent Dodds" src="https://bit.ly/kent-c-dodds" />
+                            <h3 className="name">
+                                Antonine Griezmans
+                            </h3>
+                        </div>
+                    </Col>
+                </Row>
                 <Row>
                     <Col xs={0} md={4}></Col>
                     <Col xs={12} md={5}>
@@ -36,7 +71,8 @@ const Players = ({ playerOne, playerTwo }) => {
                     </Col>
                     <Col xs={0} md={1}></Col>
                 </Row>
-            </Container>)
+            </Container>
+        )
     }
     else {
         return (
@@ -51,22 +87,6 @@ const Players = ({ playerOne, playerTwo }) => {
             </Container>
         )
     }
-    /*  1 & !2 || !1 &2
-      1&2
-      !1&!2 */
-    return (
-        <div>
-            <div>
-                <div className="playerOne">
-                    {JSON.stringify(playerOne)}
-                </div>
-                <div className="playerTwo">
-                    {JSON.stringify(playerTwo)}
-                </div>
-            </div>
-        </div>
-    )
 };
-
 
 export default Players;

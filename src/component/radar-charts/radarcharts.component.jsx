@@ -149,11 +149,11 @@ const RadarCharts = () => {
         {
             data: {
                 Attacking: 0.80,
-                Passing: .89,
+                Passing: .19,
                 Technical: 0.90,
                 Creativity: 0.60,
                 Defencive: 0.66,
-                bla: 0.44,
+                bla: 0.49,
 
             },
             meta: { color: 'rgb(69, 188, 75)' }
@@ -175,13 +175,11 @@ const RadarCharts = () => {
             <Row>
                 <Col xs>
                     <RadarChart
-                        className=""
                         captions={captions}
                         data={data}
                         size={290}
-                    /></Col>
-
-
+                    />
+                </Col>
             </Row>
         </Container>
     );
