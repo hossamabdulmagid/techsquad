@@ -89,3 +89,14 @@ select {
   padding: 50px;
   color: orange;
 }
+
+.pleaseChoosePlayer {
+  margin-top: 80px;
+}
+.font {
+  font-size: 100%;
+  font-weight: 900;
+}
+.asa{
+  color:blanchedalmond;
+}

@@ -1,4 +1,4 @@
-export const colourOptions = [
+export const dataOptions = [
     {
         value: "x",
         label: "X",
@@ -120,6 +120,6 @@ export const stateOptions = [
 export const groupedOptions = [
     {
         label: 'Colours',
-        options: colourOptions,
+        options: dataOptions,
     },
 ];

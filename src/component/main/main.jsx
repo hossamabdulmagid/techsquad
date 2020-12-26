@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { DIV, Padding } from './styles'
 import Select from 'react-select';
-import { colourOptions, stateOptions } from './data';
+import { dataOptions, stateOptions } from './data';
 import { Container, Row, Col } from 'react-bootstrap';
 import Players from '../player/player.component'
 const Main = () => {
@@ -18,35 +18,34 @@ const Main = () => {
 
         })
     };
+
     const SecoundCustomStyles = {
         option: (styles, state) => ({
             ...styles,
-            backgroundColor: state.isSelected ? "purple" : "black",
+            backgroundColor: state.isSelected ? "orange" : "black",
             color: state.isSelected ? "white" : "white",
         }),
         control: (base, state) => ({
             ...base,
             background: "#282C34",
-            color: 'black',
+            color: state.isSelected ? "white" : "white",
             "&:hover": {
-                background: "$fff",
-                color: "black",
-                borderColor: state.isFocused ? "red" : "purple"
+                background: "black",
+                color: "white",
+
             },
 
         })
     };
 
-
-
-    const [show, setShow] = useState(true);
-    const [show2, setShow2] = useState(true);
     const [selectedPlayers, setSelectedPlayers] = useState([]);
+
     const handleChange = (event) => {
-
         setSelectedPlayers(event);
+        if (selectedPlayers.includes) {
+            return `aaa`
+        }
     }
-
 
     return (
         <>
@@ -54,31 +53,33 @@ const Main = () => {
                 <DIV />
                 <Row>
                     <Col xs={12} s={12} md={6} className="Col-select">
+                        <Padding />
+
                         <Select
                             isMulti
                             name="players"
                             styles={customStyles}
-                            options={colourOptions}
+                            options={dataOptions}
                             onChange={handleChange}
                         />
-                        <Players playerOne={selectedPlayers[0]} playerTwo={selectedPlayers[1]} />  <br />
                     </Col>
-
                     <Col xs={12} s={12} md={6}>
-                        <Select
-                            defaultValue={[stateOptions[5]]}
-                            name="month"
-                            styles={SecoundCustomStyles}
-                            options={stateOptions}
-                        />
+                        <Padding >
+                            <Select
+                                className="asa"
+                                defaultValue={[stateOptions[5]]}
+                                name="month"
+                                styles={SecoundCustomStyles}
+                                options={stateOptions}
+
+                            />
+
+                        </Padding>
+
                     </Col>
+
                 </Row>
-
-                <h1 className="playerOne">
-                    This player One
-                    </h1>
-
-
+                <Players playerOne={selectedPlayers[0]} playerTwo={selectedPlayers[1]} />  <br />
 
             </Container>
         </>

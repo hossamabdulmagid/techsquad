@@ -45,7 +45,7 @@ class RotateCharts extends React.PureComponent {
                         />
                         <h4>
                             Sales by ads Varaint
-                                </h4>
+                        </h4>
                         <Animation />
                     </Chart>
                 </Paper>
