@@ -84,7 +84,6 @@ const BarCharts = ({ players }) => {
         }
         data.push(monthData);
     })
-    console.log("data", data);
     return (
         <Container>
             <Paper className="style">

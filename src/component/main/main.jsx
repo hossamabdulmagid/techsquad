@@ -72,7 +72,7 @@ const Main = () => {
                     <Col xs={12} s={12} md={6}>
                         <RapperedSelect>
                             <Select
-                            defaultValue={stateOptions[5]}
+                                defaultValue={stateOptions[5]}
                                 name="months"
                                 styles={SecoundCustomStyles}
                                 options={stateOptions}

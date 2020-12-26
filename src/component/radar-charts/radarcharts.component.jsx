@@ -15,7 +15,6 @@ const RadarCharts = ({ players = [], period = 'avg' }) => {
 
     const data = players.map(player => {
         if (period != 'avg') {
-            console.log("period", period);
             player.data = player[period];
         } else {
             player.data = {
@@ -38,7 +37,6 @@ const RadarCharts = ({ players = [], period = 'avg' }) => {
 
         return player;
     })
-    console.log("data", data);
     return (
         <Container>
             <Row className="text-center">
