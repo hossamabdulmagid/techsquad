@@ -10,8 +10,7 @@ import {
 } from '@devexpress/dx-react-chart-material-ui';
 import { withStyles } from '@material-ui/core/styles';
 import { Animation } from '@devexpress/dx-react-chart';
-import { Container } from 'react-bootstrap'
-import { confidence as data } from './data.barcharts';
+import { Container } from 'react-bootstrap';
 
 const format = () => tick => tick;
 const legendStyles = () => ({
@@ -73,49 +72,46 @@ const TitleText = withStyles(titleStyles)(({ classes, ...props }) => (
     <Title.Text {...props} className={classes.title} />
 ));
 
-const BarCharts = (props) => {/*
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            data,
-        };
-    }
-
-
-
-
- 
-    render() { */
-    const [state, setState] = useState({ data })
-
-    const { data: chartData } = state;
-    const { classes } = props;
-    console.log(data, props, `props every where`)
-
+const BarCharts = ({ players }) => {
+    let months = ["Dec", "Jan", "Feb", "Mar", "Apr"];
+    let data = [];
+    months.forEach(month => {
+        let monthData = {};
+        monthData['month'] = month;
+        monthData['player1'] = parseInt(parseFloat(players[0][month].Attacking) * 100);
+        if (players[1]) {
+            monthData['player2'] = parseInt(parseFloat(players[1][month].Attacking) * 100);
+        }
+        data.push(monthData);
+    })
+    console.log("data", data);
     return (
         <Container>
             <Paper className="style">
-                <Chart data={chartData} className={classes.chart}>
+                <Chart data={data} className={"chart Attacking"} >
                     <ArgumentAxis tickFormat={format} />
                     <ValueAxis
                         max={50}
+                        min={0}
                         labelComponent={ValueLabel}
                     />
                     <LineSeries
-                        name="Church"
-                        valueField="church"
-                        argumentField="year"
+                        name={players && players[0] && players[0].label}
+                        valueField="player1"
+                        argumentField="month"
                     />
-                    <LineSeries
-                        name="Military"
-                        valueField="military"
-                        argumentField="year"
-                    />
-                    <Legend position="none" rootComponent={Root} itemComponent={Item} labelComponent={Label} />
+                    {players && players[1] && (
+                        <LineSeries
+                            name={players && players[1] && players[1].label || ''}
+                            valueField="player2"
+                            argumentField="month"
+                        />
+                    )}
+
+                    <Legend position="bottom" rootComponent={Root} itemComponent={Item} labelComponent={Label} />
                     <h4>
-                        Vistors over Time
-                        </h4>
+                        Attacking month to month
+                    </h4>
                     <Animation />
                 </Chart>
             </Paper>

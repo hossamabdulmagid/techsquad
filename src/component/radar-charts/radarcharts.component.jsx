@@ -1,35 +1,9 @@
 import React from 'react';
-
 import RadarChart from 'react-svg-radar-chart';
 import 'react-svg-radar-chart/build/css/index.css'
 import { Container, Col, Row } from 'react-bootstrap'
-/*
-player >>>  X
-Key        Dec Jan Feb Mar Apr
-Attacking  65  55  70  67  72
-Passing    55  45  66  70  80
-Technical  76  77  71  80  76
-Creativity 60  56  67  77  78
-Defencive  40  45  50  48  60
-*/
-
-/*
-player >>>  Y
-Key        Dec Jan  Feb    Mar   Apr
-Attacking  80  85   89     88    90
-Passing    89  79   74     70    80
-Technical  90  81   71     80    76
-Creativity 60  56   67     77    78
-Defencive  66  76   50     67    70
- 
-*/
-
-
 const RadarCharts = ({ players = [], period = 'avg' }) => {
-
     const captions = {
-        // columns
-
         Attacking: "Attacking",
         Passing: "Passing",
         Technical: "Technical",
@@ -37,10 +11,9 @@ const RadarCharts = ({ players = [], period = 'avg' }) => {
         Defencive: "Defencive"
     }
 
-
     const months = ["Dec", "Jan", "Feb", "Mar", "Apr"];
-    const data = players.map(player => {
 
+    const data = players.map(player => {
         if (period != 'avg') {
             console.log("period", period);
             player.data = player[period];
@@ -67,19 +40,17 @@ const RadarCharts = ({ players = [], period = 'avg' }) => {
     })
     console.log("data", data);
     return (
-        <Container >
+        <Container>
             <Row className="text-center">
-                <Col bsPrefix="d-block d-lg-none d-md-none">
-
+                <Col bsPrefix="d-block d-md-none d-lg-none d-xl-none center-item">
                     <RadarChart
                         captions={captions}
                         data={data}
-                        size={390}
                     />
                 </Col>
             </Row>
             <Row className="text-center">
-                <Col bsPrefix="d-block d-sm-none d-xs-none d-md-block d-lg-block center-item" >
+                <Col bsPrefix="d-none d-md-block d-lg-block  d-xl-block center-item" >
                     <div>
                         <RadarChart
                             captions={captions}
@@ -87,7 +58,6 @@ const RadarCharts = ({ players = [], period = 'avg' }) => {
                             size={690}
                         />
                     </div>
-
                 </Col>
             </Row>
         </Container>

@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import RadarCharts from '../radar-charts/radarcharts.component'
 import BarCharts from '../bar-charts/barcharts.component'
-import RotateCharts from '../rotatecharts/rotatecharts.component'
 import { Container, Row, Col } from 'react-bootstrap'
 import { Avatar } from "@chakra-ui/react"
 
@@ -14,8 +13,7 @@ const Players = ({ players = [], period = 'avg' }) => {
                 <Row>
                     {players.map((player, i) => {
                         return (
-                            <>
-
+                            <Fragment>
                                 <Col xs={12} md={4} className="styled" key={`player${i}`}>
                                     <div className="User">
                                         <div className={dotclasses[i]}></div>
@@ -26,7 +24,7 @@ const Players = ({ players = [], period = 'avg' }) => {
                                     </div>
                                 </Col>
                                 {players.length == 2 && i == 0 ? (<Col xs={12} md={4} className="styled"><small>vs</small></Col>) : null}
-                            </>
+                            </Fragment>
                         )
                     })}
                 </Row>

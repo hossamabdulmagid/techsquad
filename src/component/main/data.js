@@ -10,16 +10,15 @@ export const dataOptions = [
             Technical: 0.76,
             Creativity: 0.60,
             Defencive: 0.40,
-            bla: 0.1,
+            
         },
         Jan: {
-
             Attacking: 0.55,
             Passing: 0.45,
             Technical: 0.77,
             Creativity: 0.56,
             Defencive: 0.45,
-            bla: 0.1,
+            
         },
         Feb: {
 
@@ -28,7 +27,7 @@ export const dataOptions = [
             Technical: 0.71,
             Creativity: 0.67,
             Defencive: 0.50,
-            bla: 0.1,
+            
         },
 
         Mar: {
@@ -38,7 +37,7 @@ export const dataOptions = [
             Technical: 0.80,
             Creativity: 0.80,
             Defencive: 0.48,
-            bla: 0.1,
+            
         },
 
         Apr: {
@@ -48,7 +47,7 @@ export const dataOptions = [
             Technical: 0.76,
             Creativity: 0.78,
             Defencive: 0.60,
-            bla: 0.1,
+            
         },
         meta: { color: 'rgb(69, 188, 75)' }
       

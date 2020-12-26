@@ -44,7 +44,14 @@ const Main = () => {
     const handleChangePeriod = (event) => {
         setSelectedPeriod(event.value || []);
     }
-    const [month, setMonth] = useState([{ name: 'January' }, { name: 'February' }, { name: 'March' }, { name: 'April' }, { name: 'December' }, { name: 'Avarage' }])
+    const [month, setMonth] = useState([
+        { name: 'January' },
+        { name: 'February' },
+        { name: 'March' },
+        { name: 'April' },
+        { name: 'December' },
+        { name: 'Avarage' }
+    ]);
 
     return (
         <Fragment>
@@ -65,12 +72,11 @@ const Main = () => {
                     <Col xs={12} s={12} md={6}>
                         <RapperedSelect>
                             <Select
-
+                            defaultValue={stateOptions[5]}
                                 name="months"
                                 styles={SecoundCustomStyles}
                                 options={stateOptions}
                                 onChange={handleChangePeriod}
-
                                 theme={(theme) => ({
                                     ...theme,
                                     borderRadius: 0,
@@ -89,9 +95,7 @@ const Main = () => {
                         </RapperedSelect>
                     </Col>
                 </Row>
-
                 <Players players={selectedPlayers} period={selectedPeriod} />
-
             </Container>
         </Fragment>
     );
