@@ -14,9 +14,9 @@ const Layout = () => {
                         <div className="User">
                             <div className="roundblue"></div>
                             <Avatar size="xs" name="Kent Dodds" src="https://bit.ly/kent-c-dodds" />
-                            <small className="UserName">
+                            <span className="UserName">
                                 Kylian mbappe
-                            </small>
+                            </span>
                         </div>
                     </Col>
                     <Col xs={2} md={4} className="styled"><small>vs</small></Col>
@@ -24,9 +24,9 @@ const Layout = () => {
                         <div className="User">
                             <div className="roundgreen"></div>
                             <Avatar size="xs" name="Kent Dodds" src="https://bit.ly/kent-c-dodds" />
-                            <small className="UserName">
+                            <span className="UserName">
                                 Antonine Griezmans
-                            </small>
+                            </span>
                         </div>
                     </Col>
                 </Row>

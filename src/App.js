@@ -5,24 +5,26 @@ import Layout from './component/layout/layout.component'
 import Demo from './component/bar-charts/barcharts.component'
 import RotateCharts from './component/rotatecharts/rotatecharts.component'
 import { Container, Row, Col } from 'react-bootstrap'
-import Option from './component/option/opion'
+import Main from './component/main/main'
 const App = () => {
   return (
     <div className="App">
       <Container>
         <Row>
           <Col xs>
-            <Option />
+            <Main />
           </Col>
         </Row>
       </Container>
+      {/*
       <Container>
         <Layout />
         <Row>
           <Col xs={1} md={4}></Col>
-          <Col xs={11} md={8}>
+          <Col xs={10} md={6}>
             <RadarCharts />
           </Col>
+          <Col xs={1} md={2}></Col>
         </Row>
       </Container>
       <Container>
@@ -34,7 +36,7 @@ const App = () => {
             <RotateCharts />
           </Col>
         </Row>
-      </Container>
+      </Container> */}
     </div>
   );
 }

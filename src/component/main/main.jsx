@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { DIV } from './styles'
+import { DIV, Padding } from './styles'
 import Select from 'react-select';
 import { colourOptions, stateOptions } from './data';
 import { Container, Row, Col } from 'react-bootstrap';
-const Option = (props) => {
+import Players from '../player/player.component'
+const Main = () => {
     const customStyles = {
         option: (styles, state) => ({
             ...styles,
@@ -13,7 +14,7 @@ const Option = (props) => {
             ...base,
             background: "#282c34",
             color: "white",
-            color: state.isSelected ? 'white' : 'blue',
+            color: state.isSelected ? 'white' : 'white',
 
         })
     };
@@ -21,11 +22,12 @@ const Option = (props) => {
         option: (styles, state) => ({
             ...styles,
             backgroundColor: state.isSelected ? "purple" : "black",
+            color: state.isSelected ? "white" : "white",
         }),
         control: (base, state) => ({
             ...base,
             background: "#282C34",
-            color: 'white',
+            color: 'black',
             "&:hover": {
                 background: "$fff",
                 color: "black",
@@ -34,24 +36,24 @@ const Option = (props) => {
 
         })
     };
-    const [data, setData] = useState([]);
 
 
+
+    const [show, setShow] = useState(true);
+    const [show2, setShow2] = useState(true);
+    const [selectedPlayers, setSelectedPlayers] = useState([]);
     const handleChange = (event) => {
-        data.push(stateOptions);
-        console.log(data, 'asdas');
 
+        setSelectedPlayers(event);
     }
 
-    /*
-    const [array,setArray] = useState([{name:"x",},{name:"y",}])
-    */
+
     return (
         <>
             <Container>
                 <DIV />
                 <Row>
-                    <Col xs={6} md={6}>
+                    <Col xs={12} s={12} md={6} className="Col-select">
                         <Select
                             isMulti
                             name="players"
@@ -59,29 +61,28 @@ const Option = (props) => {
                             options={colourOptions}
                             onChange={handleChange}
                         />
-                        {/*
-                        
-                        <select> 
-                        {array.map((singlePlayer,x)=>(
-                            <option key={x}>
-                            {SinnglePlayer}
-                            </option>
-                        ))}
-                        </select>
-                        */}
+                        <Players playerOne={selectedPlayers[0]} playerTwo={selectedPlayers[1]} />  <br />
                     </Col>
-                    <Col xs={6} md={6}>
+
+                    <Col xs={12} s={12} md={6}>
                         <Select
-                            defaultValue={[stateOptions[12]]}
+                            defaultValue={[stateOptions[5]]}
                             name="month"
                             styles={SecoundCustomStyles}
                             options={stateOptions}
                         />
                     </Col>
                 </Row>
+
+                <h1 className="playerOne">
+                    This player One
+                    </h1>
+
+
+
             </Container>
         </>
     );
 }
 
-export default Option
+export default Main
