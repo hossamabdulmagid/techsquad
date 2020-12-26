@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Paper from '@material-ui/core/Paper';
 import {
     Chart,
@@ -21,7 +21,7 @@ const legendStyles = () => ({
         flexDirection: 'row',
     },
 });
-const legendLabelStyles = theme => ({
+const legendLabelStyles = (theme) => ({
     label: {
         paddingTop: theme.spacing(1),
         whiteSpace: 'nowrap',
@@ -73,7 +73,7 @@ const TitleText = withStyles(titleStyles)(({ classes, ...props }) => (
     <Title.Text {...props} className={classes.title} />
 ));
 
-class BarCharts extends React.PureComponent {
+const BarCharts = (props) => {/*
     constructor(props) {
         super(props);
 
@@ -82,39 +82,47 @@ class BarCharts extends React.PureComponent {
         };
     }
 
-    render() {
-        const { data: chartData } = this.state;
-        const { classes } = this.props;
-        return (
-            <Container>
-                <Paper className="style">
-                    <Chart data={chartData} className={classes.chart}>
-                        <ArgumentAxis tickFormat={format} />
-                        <ValueAxis
-                            max={50}
-                            labelComponent={ValueLabel}
-                        />
-                        <LineSeries
-                            name="Church"
-                            valueField="church"
-                            argumentField="year"
-                        />
-                        <LineSeries
-                            name="Military"
-                            valueField="military"
-                            argumentField="year"
-                        />
-                        <Legend position="none" rootComponent={Root} itemComponent={Item} labelComponent={Label} />
-                        <h4>
-                            Vistors over Time
-                        </h4>
-                        <Animation />
-                    </Chart>
-                </Paper>
-            </Container>
 
-        );
-    }
+
+
+ 
+    render() { */
+    const [state, setState] = useState({ data })
+
+    const { data: chartData } = state;
+    const { classes } = props;
+    console.log(data, props, `props every where`)
+
+    return (
+        <Container>
+            <Paper className="style">
+                <Chart data={chartData} className={classes.chart}>
+                    <ArgumentAxis tickFormat={format} />
+                    <ValueAxis
+                        max={50}
+                        labelComponent={ValueLabel}
+                    />
+                    <LineSeries
+                        name="Church"
+                        valueField="church"
+                        argumentField="year"
+                    />
+                    <LineSeries
+                        name="Military"
+                        valueField="military"
+                        argumentField="year"
+                    />
+                    <Legend position="none" rootComponent={Root} itemComponent={Item} labelComponent={Label} />
+                    <h4>
+                        Vistors over Time
+                        </h4>
+                    <Animation />
+                </Chart>
+            </Paper>
+        </Container>
+
+    );
+
 }
 
 export default withStyles(barstyledStyles, { name: 'BarCharts' })(BarCharts);
