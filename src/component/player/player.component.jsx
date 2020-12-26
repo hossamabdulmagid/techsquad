@@ -31,25 +31,19 @@ const Players = ({ players = [], period = 'avg' }) => {
                     })}
                 </Row>
                 <Row>
-
                     <Col xs={12} md={12}>
                         <div className="pleaseChoosePlayer text-center">
                             <RadarCharts players={players} period={period} className="ss" />
                         </div>
                     </Col>
-
                 </Row>
-
                 <Row>
                     <Col xs={12} md={12}>
                         <div className="pleaseChoosePlayer">
                             <BarCharts players={players} />
                         </div>
                     </Col>
-
                 </Row>
-
-
             </Container>
         )
     }
